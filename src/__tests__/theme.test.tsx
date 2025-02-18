@@ -1,4 +1,4 @@
-import React from 'react';
+/** @jest-environment jsdom */
 import { render, screen, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { ThemeProvider, useTheme, DEFAULT_THEME } from '../index';
