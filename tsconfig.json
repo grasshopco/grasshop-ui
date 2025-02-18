@@ -9,6 +9,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -28,7 +29,10 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "types": [
+      "@testing-library/jest-dom"
+    ]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
