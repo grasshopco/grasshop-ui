@@ -22,11 +22,32 @@ export function getContrastingTextColor(backgroundColor: string): string {
   return luminance > 0.5 ? '#000000' : '#FFFFFF';
 }
 
-export function adjustColor(color: string, options: {
+export interface ThemeOptions {
+  // Theme configuration options
+  disableTransitions?: boolean | undefined;
+  defaultZone?: string | undefined;
+  [key: string]: boolean | string | undefined;
+}
+
+export function createTheme(theme: ThemeConfig) {
+  return theme;
+}
+
+// The _options parameter is intended for future use, so we mark it as used
+// by referencing it in a no-op statement.
+export function extendTheme(theme: ThemeConfig, _options: ThemeOptions) {
+  void _options; // Indicate that _options is intentionally unused.
+  // TODO: Implement theme extension logic
+  return theme;
+}
+
+// Renamed the parameter to _options to indicate it's intentionally unused.
+export function adjustColor(color: string, _options: {
   alpha?: number;
   lighten?: number;
   darken?: number;
 } = {}): string {
+  void _options; // Added to avoid unused variable error.
   // We'll implement this as needed when working with components
   // For now return the original color
   return color;
